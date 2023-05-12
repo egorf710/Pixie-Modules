@@ -1,0 +1,109 @@
+<html lang="eng">
+<head>
+<meta charset="utf-8" />
+<title>Pixie Modules</title>
+<link rel="stylesheet" href="style.css" />
+<script src="javascript.js"></script>
+
+<body>
+  <nav class="navme">
+    <ul>
+      <li><a href="#About" onclick="openCity(event, 'About')">О Сайте</a></li>
+      <li>
+        <a href="#0">Модули</a>
+        <ul>
+          <li><a href="#InputModule" onclick="openCity(event, 'InputModule')">Input</a></li>
+        </ul>
+      </li>
+      <li><a href="#HowInclude" onclick="openCity(event, 'HowInclude')">Как подключить</a></li>
+    </ul>
+  </nav>
+
+  <div class="tabcontent" id="About">
+    <div class="ContentBlock">
+      <p class="ContectText"> 
+
+        Сайт создан чтобы собрать в себе модули для языка программирования <a href="https://github.com/Voz-Duh/Pixie" class = "link">Pixie</a>, которые облегчат вам работу.
+        <br>
+        О Pixie - <a href="https://github.com/Voz-Duh/Pixie" class = "link">go to</a>
+        <br>
+        Discord Pixie - <a href="https://discord.gg/4mMzrzNQap" class = "link">go to</a>
+
+      </p>
+      
+    </div>
+  </div>
+  <div class="tabcontent" id="HowInclude">
+    <div class="ContentBlock">
+      <div class="ContectTextCenter">
+
+        <h2>Как подключить модуль?</h2>
+        <br>
+        1. Создайте Java проект <br><br>
+        2. Подключите Pixie в свой проект<br>
+        <img src="images/Screenshot_8.png"><br><br>
+        3. Создайте pixie файл.<br>
+           Пример: main.pixie<br><br>
+        <img src="images/Screenshot_9.png"><br><br>
+        4. Добавьте ваш модуль в папку modules.<br><br>
+        <img src="images/Screenshot_10.png"><br><br>
+        5. В классе App.java введите:<br>
+        <div class="code-pixie"><pre>
+          Pixie.addModule("ModuleName", new InputModule());
+        
+           //чтобы подключить модуль</pre></div><br>
+           Пример:<br>
+           <div class="code-pixie"><pre>Pixie.addModule("Input", new InputModule());
+
+            //подключаем модуль Input
+           </pre></div><br>
+        6. В том же классе App.java введите:<br>
+        <div class="code-pixie"><pre>Pixie.execute("путь до файла main.pixie");</pre></div><br>
+           Пример:<br>
+           <div class="code-pixie"><pre>Pixie.execute("C:/Projects/Java/PixieProject/src/pixie/main.pixie");</pre></div><br><br>
+        
+        <img src="images/Screenshot_10.png"><br><br>
+        
+        Готово!, Вы подключили модуль
+
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="tabcontent" id="InputModule">
+    <div class="ContentBlock">
+      
+      <div class="ContectTextCenter">
+
+        <H2>Input</H2>
+
+        Модуль <b>Input</b>, позволяет осуществить консольный ввод.
+
+        <br>
+        <br>
+
+        Поддерживает ввод: Text(String), Num(Integer, Float), Bool(Bool)
+
+        <br><br><br>
+
+        <b>Пример:</b>
+
+          <div class="code-pixie"><pre>
+          import Input
+
+          var val = Input()
+            
+          print(val)
+          </pre></div>
+
+          <div class = "download-module-btt" onclick="downloadURI('https://firebasestorage.googleapis.com/v0/b/pixie-modules.appspot.com/o/InputModule.java?alt=media&token=201e04a5-10ec-49a0-bb22-7080d271a720', 'InputModule.java')">Скачать модуль Input</div>
+
+      </div>
+      
+    </div>
+  </div>
+
+  <script>openCity(null, 'About')</script>
+</body>
+</html>
